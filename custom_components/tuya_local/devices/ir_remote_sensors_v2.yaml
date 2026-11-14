@@ -37,3 +37,36 @@ entities:
         type: integer
         unit: "%"
         class: measurement
+  - entity: select
+    translation_key: temperature_unit
+    category: config
+    dps:
+      - id: 5
+        name: option
+        type: string
+        optional: true
+        mapping:
+          - dps_val: c
+            value: celsius
+          - dps_val: f
+            value: fahrenheit
+  - entity: binary_sensor
+    class: battery_charging
+    category: diagnostic
+    dps:
+      - id: 8
+        name: sensor
+        type: boolean
+        optional: true
+  - entity: binary_sensor
+    class: plug
+    category: diagnostic
+    dps:
+      - id: 20
+        name: sensor
+        type: string
+        optional: true
+        mapping:
+          - dps_val: usb_power
+            value: true
+          - value: false
